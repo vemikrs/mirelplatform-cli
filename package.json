@@ -1,0 +1,19 @@
+{
+  "name": "mirelplatform-cli-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "templates/*"
+  ],
+  "scripts": {
+    "build": "pnpm -r --filter ./packages/** run build",
+    "dev:cli": "pnpm --filter @vemi/mirelplatform-cli dev",
+    "lint": "echo 'Add ESLint later'",
+    "test": "pnpm -r --filter ./packages/** run test || true",
+    "release": "echo 'Set up changesets or release action here'"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^20.12.0"
+  }
+}
