@@ -11,7 +11,7 @@ export default class PlatformDoctor extends Command {
     ];
     for (const c of checks) {
       try {
-        const out = execSync(c.cmd, { stdio: 'pipe' }).toString().trim();
+        const out = execSync(c.cmd, { encoding: 'utf-8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
         this.log(`[ok] ${c.name}: ${out}`);
       } catch {
         this.log(`[ng] ${c.name}: not found`);

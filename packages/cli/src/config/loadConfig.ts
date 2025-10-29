@@ -1,5 +1,5 @@
 import { cosmiconfig } from 'cosmiconfig';
-import { MirelConfigSchema, MirelConfig } from './schema';
+import { MirelConfigSchema, MirelConfig } from './schema.js';
 
 export async function loadConfig(cwd: string = process.cwd()): Promise<MirelConfig> {
   const explorer = cosmiconfig('mirel');

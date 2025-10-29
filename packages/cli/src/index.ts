@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { run } from '@oclif/core';
+import { run, handle } from '@oclif/core';
 
-run().then(undefined, require('@oclif/core/handle'));
+await run(process.argv.slice(2), import.meta.url).catch(handle);

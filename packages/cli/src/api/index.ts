@@ -1,2 +1,2 @@
-export { loadConfig } from '../config/loadConfig';
-export { resolveTemplate } from '../core/template';
+export { loadConfig } from '../config/loadConfig.js';
+export { resolveTemplate } from '../core/template.js';

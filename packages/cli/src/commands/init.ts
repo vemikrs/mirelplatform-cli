@@ -1,6 +1,6 @@
 import { Command, Flags } from '@oclif/core';
 import prompts from 'prompts';
-import { resolveTemplate } from '../core/template';
+import { resolveTemplate } from '../core/template.js';
 
 export default class Init extends Command {
   static description = '新規プロジェクトの初期化（テンプレから生成）';
