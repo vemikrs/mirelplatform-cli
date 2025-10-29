@@ -1,5 +1,5 @@
 import { Command, Flags } from '@oclif/core';
-import { resolveTemplate } from '@vemi/mirelplatform-cli/dist/core/template';
+import { resolveTemplate } from '@vemi/mirelplatform-cli/api';
 
 export default class PromarkerNew extends Command {
   static description = 'ProMarker アプリをテンプレから生成（デモ実装）';
