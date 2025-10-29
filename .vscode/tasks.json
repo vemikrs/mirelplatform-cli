@@ -1,0 +1,183 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build: all",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["-r", "-F", "@vemi/*", "run", "build"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$tsc",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "build: shared",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["--filter", "@vemi/mirel-shared", "run", "build"],
+      "group": "build",
+      "problemMatcher": "$tsc",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "build: cli",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["--filter", "@vemi/mirelplatform-cli", "run", "build"],
+      "group": "build",
+      "problemMatcher": "$tsc",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "build: plugin-promarker",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["--filter", "@vemi/mirel-promarker", "run", "build"],
+      "group": "build",
+      "problemMatcher": "$tsc",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "typecheck: all",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["typecheck"],
+      "group": "test",
+      "problemMatcher": "$tsc",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "typecheck: cli",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["--filter", "@vemi/mirelplatform-cli", "run", "typecheck"],
+      "group": "test",
+      "problemMatcher": "$tsc",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "dev: cli",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["dev:cli", "--", "--help"],
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      }
+    },
+    {
+      "label": "watch: shared",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["--filter", "@vemi/mirel-shared", "run", "build", "--watch"],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "fileLocation": "relative",
+        "pattern": {
+          "regexp": "^([^\\s].*):[(\\d+),(\\d+)]:\\s+(warning|error)\\s+TS(\\d+)\\s*:\\s*(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "code": 5,
+          "message": 6
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^\\s*\\d{1,2}:\\d{1,2}:\\d{1,2}\\s+(AM|PM)?\\s+-\\s+File change detected\\.",
+          "endsPattern": "^\\s*\\d{1,2}:\\d{1,2}:\\d{1,2}\\s+(AM|PM)?\\s+-\\s+Found"
+        }
+      },
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "watch: cli",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["--filter", "@vemi/mirelplatform-cli", "run", "build", "--watch"],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "fileLocation": "relative",
+        "pattern": {
+          "regexp": "^([^\\s].*):[(\\d+),(\\d+)]:\\s+(warning|error)\\s+TS(\\d+)\\s*:\\s*(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "code": 5,
+          "message": 6
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^\\s*\\d{1,2}:\\d{1,2}:\\d{1,2}\\s+(AM|PM)?\\s+-\\s+File change detected\\.",
+          "endsPattern": "^\\s*\\d{1,2}:\\d{1,2}:\\d{1,2}\\s+(AM|PM)?\\s+-\\s+Found"
+        }
+      },
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "clean: all",
+      "type": "shell",
+      "command": "find",
+      "args": ["packages", "-type", "d", "-name", "dist", "-exec", "rm", "-rf", "{}", "+", ";"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "install",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["install"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "rebuild: all",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "clean: all",
+        "build: all"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
