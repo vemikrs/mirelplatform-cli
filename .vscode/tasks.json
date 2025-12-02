@@ -5,7 +5,7 @@
       "label": "build: all",
       "type": "shell",
       "command": "pnpm",
-      "args": ["-r", "-F", "@vemi/*", "run", "build"],
+      "args": ["-r", "-F", "@vemijp/*", "run", "build"],
       "group": {
         "kind": "build",
         "isDefault": true
@@ -20,7 +20,7 @@
       "label": "build: shared",
       "type": "shell",
       "command": "pnpm",
-      "args": ["--filter", "@vemi/mirel-shared", "run", "build"],
+      "args": ["--filter", "@vemijp/mirel-shared", "run", "build"],
       "group": "build",
       "problemMatcher": "$tsc",
       "presentation": {
@@ -32,7 +32,7 @@
       "label": "build: cli",
       "type": "shell",
       "command": "pnpm",
-      "args": ["--filter", "@vemi/mirelplatform-cli", "run", "build"],
+      "args": ["--filter", "@vemijp/mirelplatform-cli", "run", "build"],
       "group": "build",
       "problemMatcher": "$tsc",
       "presentation": {
@@ -44,7 +44,7 @@
       "label": "build: plugin-promarker",
       "type": "shell",
       "command": "pnpm",
-      "args": ["--filter", "@vemi/mirel-promarker", "run", "build"],
+      "args": ["--filter", "@vemijp/mirel-promarker", "run", "build"],
       "group": "build",
       "problemMatcher": "$tsc",
       "presentation": {
@@ -68,7 +68,7 @@
       "label": "typecheck: cli",
       "type": "shell",
       "command": "pnpm",
-      "args": ["--filter", "@vemi/mirelplatform-cli", "run", "typecheck"],
+      "args": ["--filter", "@vemijp/mirelplatform-cli", "run", "typecheck"],
       "group": "test",
       "problemMatcher": "$tsc",
       "presentation": {
@@ -93,7 +93,7 @@
       "label": "watch: shared",
       "type": "shell",
       "command": "pnpm",
-      "args": ["--filter", "@vemi/mirel-shared", "run", "build", "--watch"],
+      "args": ["--filter", "@vemijp/mirel-shared", "run", "build", "--watch"],
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
@@ -122,7 +122,7 @@
       "label": "watch: cli",
       "type": "shell",
       "command": "pnpm",
-      "args": ["--filter", "@vemi/mirelplatform-cli", "run", "build", "--watch"],
+      "args": ["--filter", "@vemijp/mirelplatform-cli", "run", "build", "--watch"],
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",

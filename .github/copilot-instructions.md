@@ -16,7 +16,7 @@ This is a TypeScript-based CLI monorepo built with oclif, managed by pnpm worksp
 
 - **Monorepo Structure**: pnpm workspaces with multiple packages
 - **Core CLI**: Thin core with plugin extension support
-- **Shared Utilities**: Common functionality in `@vemi/mirel-shared`
+- **Shared Utilities**: Common functionality in `@vemijp/mirel-shared`
 - **Plugin System**: Plugins can extend commands via oclif
 - **Template System**: Project scaffolding via giget
 
@@ -50,7 +50,7 @@ This is a TypeScript-based CLI monorepo built with oclif, managed by pnpm worksp
 
 2. **Import order**:
    - External dependencies (Node.js built-ins, npm packages)
-   - Internal workspace packages (`@vemi/*`)
+   - Internal workspace packages (`@vemijp/*`)
    - Relative imports
 
 3. **Use workspace protocol**: `workspace:*` for internal dependencies
@@ -88,9 +88,9 @@ This is a TypeScript-based CLI monorepo built with oclif, managed by pnpm worksp
 ### Build Order
 
 Packages must be built in dependency order:
-1. `@vemi/mirel-shared` (no dependencies)
-2. `@vemi/mirelplatform-cli` (depends on shared)
-3. `@vemi/mirel-promarker` (depends on cli)
+1. `@vemijp/mirel-shared` (no dependencies)
+2. `@vemijp/mirelplatform-cli` (depends on shared)
+3. `@vemijp/mirel-promarker` (depends on cli)
 
 ### Commands
 
@@ -107,7 +107,7 @@ Packages must be built in dependency order:
 ├── .github/              # GitHub configuration
 ├── .vscode/              # VS Code settings and tasks
 ├── packages/
-│   ├── cli/             # Core CLI (@vemi/mirelplatform-cli)
+│   ├── cli/             # Core CLI (@vemijp/mirelplatform-cli)
 │   │   ├── src/
 │   │   │   ├── commands/    # oclif commands
 │   │   │   ├── config/      # Configuration handling
@@ -115,11 +115,11 @@ Packages must be built in dependency order:
 │   │   │   ├── api/         # Public API exports
 │   │   │   └── index.ts     # CLI entry point
 │   │   └── package.json
-│   ├── shared/          # Shared utilities (@vemi/mirel-shared)
+│   ├── shared/          # Shared utilities (@vemijp/mirel-shared)
 │   │   ├── src/
 │   │   │   └── logger.ts    # Logging utilities
 │   │   └── package.json
-│   └── plugin-promarker/ # Example plugin (@vemi/mirel-promarker)
+│   └── plugin-promarker/ # Example plugin (@vemijp/mirel-promarker)
 │       ├── src/
 │       │   └── commands/    # Plugin-specific commands
 │       └── package.json
@@ -138,7 +138,7 @@ Packages must be built in dependency order:
 5. **Plugin Architecture**: Keep core thin, extend via plugins
 6. **Template-Based**: Use giget for project scaffolding
 7. **Validation**: Use zod for runtime validation
-8. **Logging**: Use shared logger from `@vemi/mirel-shared`
+8. **Logging**: Use shared logger from `@vemijp/mirel-shared`
 
 ## Testing Standards (Future)
 
@@ -162,10 +162,10 @@ When creating new plugins:
 
 1. Create package in `packages/` directory
 2. Add `oclif.commands` field in package.json
-3. Depend on `@vemi/mirelplatform-cli` using `workspace:*`
-4. Import from public API: `@vemi/mirelplatform-cli/api`
+3. Depend on `@vemijp/mirelplatform-cli` using `workspace:*`
+4. Import from public API: `@vemijp/mirelplatform-cli/api`
 5. Follow same ESM/TypeScript conventions as core
-6. Prefix plugin name with `@vemi/mirel-*`
+6. Prefix plugin name with `@vemijp/mirel-*`
 
 ## VS Code Integration
 

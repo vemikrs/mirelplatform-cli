@@ -1,5 +1,5 @@
 {
-  "name": "@vemi/mirel-shared",
+  "name": "@vemijp/mirel-shared",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.js",

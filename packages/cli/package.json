@@ -1,5 +1,5 @@
 {
-  "name": "@vemi/mirelplatform-cli",
+  "name": "@vemijp/mirelplatform-cli",
   "version": "0.1.0",
   "type": "module",
   "bin": {
@@ -28,7 +28,7 @@
     "prompts": "^2.4.2",
     "execa": "^9.3.0",
     "giget": "^1.2.1",
-    "@vemi/mirel-shared": "workspace:*"
+    "@vemijp/mirel-shared": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.6.0",

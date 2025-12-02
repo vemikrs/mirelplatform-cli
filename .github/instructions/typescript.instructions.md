@@ -22,7 +22,7 @@ import { helper } from '../utils/helper';
 
 1. Node.js built-ins
 2. External packages
-3. Workspace packages (`@vemi/*`)
+3. Workspace packages (`@vemijp/*`)
 4. Relative imports (with `.js` extension)
 
 ```typescript
@@ -35,7 +35,7 @@ import { Command, Flags } from '@oclif/core';
 import { z } from 'zod';
 
 // Workspace packages
-import { logger } from '@vemi/mirel-shared';
+import { logger } from '@vemijp/mirel-shared';
 
 // Relative imports (note .js extension)
 import { loadConfig } from '../config/loadConfig.js';
