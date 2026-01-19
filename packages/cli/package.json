@@ -24,7 +24,7 @@
     "@oclif/core": "^4.8.0",
     "@vemijp/mirel-shared": "workspace:*",
     "cosmiconfig": "^9.0.0",
-    "ejs": "^3.1.10",
+    "ejs": "^4.0.1",
     "execa": "^9.6.1",
     "giget": "^1.2.5",
     "open": "^11.0.0",
