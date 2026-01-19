@@ -1,0 +1,52 @@
+# Dependabot configuration
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  # npm パッケージの依存関係を管理
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Asia/Tokyo"
+    # Minor/Patch アップデートをまとめる
+    groups:
+      npm-minor-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    # PR の最大数を制限
+    open-pull-requests-limit: 10
+    # コミットメッセージのプレフィックス
+    commit-message:
+      prefix: "deps"
+    # レビュアーとラベルの設定
+    labels:
+      - "dependencies"
+    # 脆弱性アラートのみ即座に対応（セキュリティ更新）
+    # メジャーアップデートは個別PRで確認しやすく
+
+  # GitHub Actions ワークフローの依存関係を管理
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Asia/Tokyo"
+    # Actions の Minor/Patch アップデートをまとめる
+    groups:
+      github-actions-minor-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
+    labels:
+      - "dependencies"
+      - "github-actions"
