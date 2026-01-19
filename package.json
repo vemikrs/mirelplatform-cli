@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "typescript": "^5.9.3",
-    "@types/node": "^24.10.1",
+    "@types/node": "^25.0.9",
     "tsx": "^4.21.0"
   },
   "resolutions": {
